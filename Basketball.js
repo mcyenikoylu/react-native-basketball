@@ -328,10 +328,10 @@ class Basketball extends Component {
 
   render() {
     return (
-      <Image source={require('./assets/bg.jpg')} style={{width: '100%', height: '100%'}}>
+      <Image source={require('./assets/bg2.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
         <Score y={FLOOR_HEIGHT * 3} score={this.state.score} scored={this.state.scored} />
-        {/* <Hoop y={HOOP_Y} /> */}
+       <Hoop y={HOOP_Y} /> 
         {this.renderNet(this.state.lifecycle === LC_STARTING)}
         {this.renderFloor(this.state.vy <= 0)}
         <Ball
