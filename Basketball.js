@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
   Dimensions,
+  Image,
 } from 'react-native';
 
 import Ball from './components/Ball';
@@ -318,7 +319,8 @@ class Basketball extends Component {
 
     if (render === true) {
       return (
-        <Floor height={FLOOR_HEIGHT} />
+         <Floor height={FLOOR_HEIGHT} />
+     
       );
     }
     return null;
@@ -326,9 +328,10 @@ class Basketball extends Component {
 
   render() {
     return (
+      <Image source={require('./assets/bg.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
         <Score y={FLOOR_HEIGHT * 3} score={this.state.score} scored={this.state.scored} />
-        <Hoop y={HOOP_Y} />
+        {/* <Hoop y={HOOP_Y} /> */}
         {this.renderNet(this.state.lifecycle === LC_STARTING)}
         {this.renderFloor(this.state.vy <= 0)}
         <Ball
@@ -343,6 +346,7 @@ class Basketball extends Component {
         {this.renderFloor(this.state.vy > 0)}
         <Emoji y={NET_Y} scored={this.state.scored} />
       </View>
+      </Image>
     );
   }
 }

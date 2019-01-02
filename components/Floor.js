@@ -20,7 +20,7 @@ class Floor extends Component {
 
 const styles = StyleSheet.create({
   floorContainer: {
-    backgroundColor: '#F4F4F4',
+    // backgroundColor: '#F4F4F4',
     position: 'absolute',
     width: Dimensions.get('window').width,
     bottom: 0,
